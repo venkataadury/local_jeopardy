@@ -32,4 +32,4 @@ Write the player names instead and make the list. The game works best (GUI-wise)
 
 ## Disclaimer
 - This is just a fun program to host jeopardy with family. I have used ChatGPT to write pats of the code
-- This code is a security nightmare. The assumption is that the same computer will be the host (server) and the client. **Do NOT host thist program on any server from where it is directly accessible to the internet*
+- This code is a security nightmare. The assumption is that the same computer will be the host (server) and the client. **Do NOT host thist program on any server from where it is directly accessible to the internet**
