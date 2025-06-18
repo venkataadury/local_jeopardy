@@ -52,12 +52,12 @@ if (isset($_GET['action'], $_GET['col'], $_GET['row'])) {
 }
 
 // Initialize the floating table data if not already set
-if (!isset($_SESSION['floating_table'])) {
-    $_SESSION['floating_table'] = [
-        ['0', '0', '0', '0'],
-    ];
-}
 $_SESSION['floating_table_headers'] = ["Player 1", "Player 2", "Player 3", "Player 4"];
+if (!isset($_SESSION['floating_table'])) {
+    $sa=[];
+    foreach($_SESSION['floating_table_headers'] as $person) {array_push($sa,'0');};
+    $_SESSION['floating_table'] = [$sa,];
+}
 
 if(isset($_GET["money"])) $_SESSION["lastmoney"]=$_GET["money"];
 // Example: Add a new row from PHP code elsewhere
