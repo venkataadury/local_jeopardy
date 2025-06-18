@@ -27,6 +27,9 @@ You can edit player names and number by changing the list in just one php file.<
 Open the `floating_table_logic.php` file and edit the list with player names (by default it just says 'Player 1', 'Player 2', ...)
 Write the player names instead and make the list. The game works best (GUI-wise) with 2-4 players).
 
+### Hard Reset
+You can clear all data (questions and answers) by removing all the content in the `data` folder contained here. Do not remove the `data` folder itself.<br/>
+
 ## Limitations
 - The program currently only allows one audio, video and image file per question (and one similar set for the answer). You can merge multiple images into one.
 - You cannot have hyperlinks or formatting (bold, italics, etc.) in the questions as of yet
