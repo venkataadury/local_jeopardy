@@ -5,9 +5,10 @@ Your own local jeopardy server. Easy to Edit, easier to run!
 To start, clone the git repository to a folder. 
 If you are using linux, navigate to the repository folder. Then run:
 `php -S localhost:8000` 
-You will need to install the php server (`sudo apt install php8.3-cli`)
 You can change the exact port (i.e. the 8000 part) to any other number.
-Go to localhost:8000 on your web-browser. If you are using audio/video questions, it is recommended that you enable both audio and video autoplay on your browser for the `localhost` server only.
+You will need to install the php server (`sudo apt install php8.3-cli`)<br/>
+This program has *not* been tested on windows, but subject to setting up a PHP local server on windows, it should also work seamlessly there. Read [https://absprog.com/post/php-local-dev-server-windows11](this) manual for more information.<br/>
+Go to `localhost:8000` on your web-browser. If you are using audio/video questions, it is recommended that you enable both audio and video autoplay on your browser for the `localhost` server only.
 
 ## Usage
 You are the host of the jeopardy game. Your job is to create questions and answers and the program will store them in a pre-defined format.
