@@ -29,6 +29,7 @@ Write the player names instead and make the list. The game works best (GUI-wise)
 
 ### Hard Reset
 You can clear all data (questions and answers) by removing all the content in the `data` folder contained here. Do not remove the `data` folder itself.<br/>
+To reset scores or re-play a game, or whenever you change player names or number of players, always reset the game (click 'reset-game' on top-right of the screen)
 
 ## Limitations
 - The program currently only allows one audio, video and image file per question (and one similar set for the answer). You can merge multiple images into one.
