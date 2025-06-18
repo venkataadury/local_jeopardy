@@ -1,0 +1,56 @@
+#floating-footer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background: #f9f9f9;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding-top: 40px;
+  }
+  #floating-footer table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  #floating-footer th, #floating-footer td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  #reset-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 1100;
+  }
+  #home-button {
+    position: absolute;
+    bottom: 200px;
+    right: 10px;
+    z-index: 1100;
+  }
+  #edit-button {
+    position: absolute;
+    bottom: 250px;
+    right: 10px;
+    z-index: 1100;
+  }
+  #hide-button {
+    position: absolute;
+    bottom: 300px;
+    right: 10px;
+    z-index: 1100;
+  }
+
+  .header-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    justify-content: center;
+  }
+  .header-buttons form {
+    display: inline;
+    margin: 0;
+  }
