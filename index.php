@@ -51,9 +51,7 @@
 
   // Header row
   echo "<thead><tr>";
-  foreach ($headers as $header) {
-      echo "<th style='width: $colPercent%; height: $rowPercent%; font-size: 1.5em; text-align: center; vertical-align: middle; background-color: #003366; color: white;'>$header</th>";
-  }
+  foreach ($headers as $header) echo "<th style='width: $colPercent%; height: $rowPercent%; font-size: 1.5em; text-align: center; vertical-align: middle; background-color: #003366; color: white;'>$header</th>";
   echo "</tr></thead>";
 
   echo "<tbody>";

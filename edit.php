@@ -21,6 +21,7 @@ $ANSWER_FILE = $QUESTION_PREFIX . "a.txt";
     <link rel="stylesheet" href="floating-footer-style.css">
 </head>
 <body>
+    <?php include("data.php"); ?>
     <?php include("floating_table_logic.php"); ?>
     <?php
      // After edit submit
@@ -79,13 +80,27 @@ $ANSWER_FILE = $QUESTION_PREFIX . "a.txt";
         if (isset($_FILES["aimage"]) && $_FILES["aimage"]["error"] == UPLOAD_ERR_OK) {
             move_uploaded_file($_FILES["aimage"]["tmp_name"], $QUESTION_PREFIX . "a.png");
         }
+
+        // Update category name
+        if (isset($_POST["category_name"])) {
+            $newCategoryName = $_POST["category_name"];
+            $headers[$_GET["category"]-1] = $newCategoryName;
+            // Save the updated headers to the data.php file
+            $dataFile = fopen("data/headers.txt", "w");
+            fwrite($dataFile, implode("\n", $headers));
+            fclose($dataFile);
+        }
     }
     ?>
     <?php include("data.php"); ?>
-    <h1 style="color: #885511;">Edit Question for $<?php echo $_GET["money"] * 100; ?> (Category: <?php echo $headers[$_GET["category"]-1]; ?>)</h1>
+    <form method="post" action="edit.php?category=<?php echo urlencode($_GET["category"]); ?>&money=<?php echo urlencode($_GET["money"]); ?>" enctype="multipart/form-data">
+    <h1 style="color: #885511;">Edit Question for $<?php echo $_GET["money"] * 100; ?>
+    <!-- Make the category name editable in a table -->
+    (Category: <input type="text" name="category_name" value="<?php echo htmlspecialchars($headers[$_GET["category"]-1]); ?>">)
+    </h1>
 
     <!-- Create a form to edit the question. It should have 2 large text blocks - question and answer. Then an option to upload 1.  a video, 2. an audio file, 3. an image -->
-    <form method="post" action="edit.php?category=<?php echo urlencode($_GET["category"]); ?>&money=<?php echo urlencode($_GET["money"]); ?>" enctype="multipart/form-data">
+    
         <label for="question">Question:</label><br>
         <textarea id="question" name="question" rows="4" cols="50"><?php
             if (file_exists($QUESTION_FILE)) {

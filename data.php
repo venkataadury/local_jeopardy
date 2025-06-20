@@ -1,5 +1,6 @@
 <?php
-$headers = ["Based on Lyrics", "Tunes and Backgrounds", "Video clips of songs", "People behind the music", "Anything songs"];
+# Load headers from data/headers.txt
+$headers = file("data/headers.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
  $matrix = [
     [11, 12, 13, 14, 15],

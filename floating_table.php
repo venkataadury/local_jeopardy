@@ -38,7 +38,17 @@
               <?php endforeach; ?>
               <button type="submit">+</button>
             </form>
-            <?= htmlspecialchars($_SESSION['floating_table_headers'][$colIndex] ?? ('Column ' . ($colIndex + 1))) ?>
+            <!-- When edit_table_mode is active, add a form to edit the column name -->
+            <?php if (isset($_SESSION["edit_table_mode"]) && $_SESSION["edit_table_mode"]): ?>
+              <form method="post">
+                <input type="hidden" name="colIndex" value="<?= $colIndex ?>">
+                <input type="text" name="newHeader" style="width: 60px;" value="<?= htmlspecialchars($_SESSION['floating_table_headers'][$colIndex] ?? ('Column ' . ($colIndex + 1))) ?>">
+                <!--<button type="submit">Edit</button>-->
+              </form>
+            <?php else: ?>
+              <!-- Display the column name -->
+              <?= htmlspecialchars($_SESSION['floating_table_headers'][$colIndex] ?? ('Column ' . ($colIndex + 1))) ?>
+             <?php endif; ?>
             <form method="get">
               <input type="hidden" name="action" value="dec">
               <input type="hidden" name="row" value="0">
@@ -53,6 +63,7 @@
           </div>
         </th>
       <?php endforeach; ?>
+      
     </tr>
     <?php foreach ($_SESSION['floating_table'] as $rowIndex => $row): ?>
     <tr>
